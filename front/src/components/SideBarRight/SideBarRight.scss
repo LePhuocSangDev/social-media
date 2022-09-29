@@ -1,0 +1,66 @@
+@import "../../globalStyle/variable.scss";
+
+.sb-right {
+  max-width: 20vw;
+
+    &__icon {
+      width: 100%;
+      height: 70px;
+      @include flexbox(center,center);
+      font-size: 40px;
+      background-color:#5edfff;
+      color: white;
+    }
+
+    &__friends {
+      height: calc(100vh - 70px);
+      padding: $spacing-md 0; 
+      overflow-y: scroll;
+      overflow-x: hidden;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      &::-webkit-scrollbar {
+        display: none;
+      }    
+      
+      .sb-right__friend {
+        margin-bottom: $spacing-sm;
+
+          &:last-child {
+            margin: 0;
+          }
+          
+          a {
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            width: 60px;
+            height: 60px;
+            
+            img {                          
+              width: 100%;
+              height: 100%;   
+              border-radius:50% ;
+              border: 3px dashed darkturquoise;       
+            }
+  
+            .friend-status {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #b0bacb;
+              display: block;
+              position: absolute;
+              top: 10px;
+              left: 0;
+            }
+
+            .friend-status.friend-active {
+              background: #17dd17;
+            }
+          }
+
+         
+      }
+    }
+}

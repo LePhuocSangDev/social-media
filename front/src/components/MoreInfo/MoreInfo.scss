@@ -1,0 +1,92 @@
+@import "../../globalStyle/variable.scss"; 
+
+.more-info {
+  flex: 2;
+  @include flexbox(unset,unset,$spacing-md);
+  flex-direction: column;
+
+  .friends {
+    background-color: white;
+    padding: $spacing-md;
+    border-radius: 10px;
+    overflow-y: scroll;
+    width: 100%;
+    scrollbar-width: none;
+    height: 70vh;
+
+      &__heading {
+        @include flexbox(space-between,center);
+        font-size: 22px;
+        font-weight: 700;
+          button {
+            font-size: 30px;
+            padding:0 4px;
+            line-height: 35px;
+            &:hover {
+              background-color: $primary;
+              border-radius: 50%;
+            }
+          }
+      }
+
+      &__status {
+        margin: $spacing-md 0;
+          button {
+            border-radius: 10px;
+            border: 1px solid #e5e5e5;
+            padding: 8px 16px;
+            margin-right: $spacing-sm;
+
+            &:hover {
+              background-color: #5edfff;
+              color: white ;
+            }
+          }
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md;
+        margin-top: $spacing-md;
+        .friend {
+          @include flexbox(space-between,center);
+
+
+            &-details {
+              @include flexbox(center,center);
+              gap: $spacing-md;
+            }
+
+            &-img {
+              width: 60px;
+              height: 60px;
+              border-radius:50% ;
+            }
+
+            &-name {               
+              &:first-child {
+                font-weight: 800;
+              }              
+            }
+
+            &-tag {
+              color: $text2;
+            }
+
+            .activity-name {
+              font-size: 15px;
+             
+               
+                span {
+                  font-weight: 700;
+                }
+                a {
+                  color: $primary;
+                  padding: 0 4px;
+                }
+            }
+        }
+      }
+  }
+}

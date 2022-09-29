@@ -1,0 +1,15 @@
+@import "../../globalStyle/variable.scss";
+
+.home {
+  display: flex;
+  gap: $spacing-md ;
+  padding:$spacing-lg $spacing-md ;
+  background: #eff4fb;
+
+    &__left {
+      flex: 4;
+      @include flexbox(unset,unset,$spacing-md);
+      flex-direction: column;
+      
+    }
+}

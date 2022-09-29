@@ -1,0 +1,7 @@
+@import "../../globalStyle/variable.scss";
+
+.posts {
+  @include flexbox(unset,unset, $spacing-md);
+  flex-direction:column;
+}
+

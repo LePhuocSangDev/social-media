@@ -1,0 +1,5 @@
+@import "../globalStyle/variable.scss";
+
+.layout {
+ @include flexbox
+}

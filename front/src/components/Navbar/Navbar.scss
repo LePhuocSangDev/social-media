@@ -1,0 +1,167 @@
+@import "../../globalStyle/variable.scss";
+
+.nav {
+ height: 70px;
+ background: $primary;
+ @include flexbox(none ,center, $spacing-sm);
+ position: relative;
+ color: white;
+
+  .nav-main {
+    flex: 6;
+    @include flexbox(space-between,center, $spacing-sm);
+    padding: 0 $spacing-md;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      background: rgba(255, 255, 255,0.3);
+      width: 1px;
+      height: 25px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      border-radius: 50% ;
+    }
+    
+
+    &__logo {
+     @include box(120px,70px);
+    }
+
+    &__list {
+      @include flexbox(space-between, center,$spacing-lg);
+
+      a {
+        color: inherit;
+      }
+      
+    }
+
+    &__search {     
+      height: 40px;
+      position: relative; 
+      background-color: #534fee;
+      border-radius: 20px;
+
+      input {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        color: white;
+        background: transparent;
+        padding-left: $spacing-md;
+        border: none;
+
+        &::placeholder {
+          color: white;
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 4px;
+        background-color: #5edfff;
+        border-radius: 50%;
+        color: white;
+        padding: 8px;
+        font-size: 1.2rem;
+
+        &::after {
+          content: "";
+          display: block;
+          background: white;
+          width: 13px;
+          height: 5px;
+          transform: rotate(24deg);
+          position: absolute;
+          top: 2px;
+          right: 4px;
+          border-radius: 50% ;
+        }
+      }
+    }
+  }
+  .nav-icons {
+    flex: 3;
+    position: relative;
+    @include flexbox(space-evenly,center);
+    color: #534fee;
+    font-size: 2.4rem;
+    &::after {
+      content: "";
+      display: block;
+      background: rgba(255, 255, 255,0.3);
+      width: 1px;
+      height: 25px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      border-radius: 50% ;
+    }
+
+
+  }
+  .nav-profile {
+    @include flexbox(unset,center,$spacing-sm);
+    position: relative;
+    flex: 3;
+      a {
+        @include flexbox(center,center,$spacing-sm);
+        color: inherit
+      }
+
+      img {
+        @include box(4rem);
+        border-radius: 50%;
+      }
+
+      &__more {
+        position: absolute;
+        top: 20%;
+        right: calc(5%);
+      };
+
+
+  }
+
+  .nav-login {
+    padding: 4px 12px;
+    border-radius: 5px;
+    background: white;
+    color: black;
+    margin:0 $spacing-md;
+    &:hover {
+      background: var(--purple);
+      color: white;
+    }
+  }
+
+  .nav-profile__list {
+    position: absolute;
+    width: 200px;
+    background-color: white;
+    color: black;
+    top: 100%;
+    right: 0;
+    border: 1px solid black;
+    padding: $spacing-sm;
+
+    &::after {      
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: -20px;
+      right: 60%;
+      border-width:10px ;
+      border-style:solid ;
+      border-color: transparent transparent white  transparent;
+    }
+  }
+}

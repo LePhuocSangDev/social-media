@@ -1,0 +1,78 @@
+@import "../../globalStyle/variable.scss";
+
+.write-post {
+  background-color: white;
+  border-radius: 10px;
+
+    .write-options {
+      display: flex;
+      border-bottom: 1px solid #e6e9ec;
+
+        .write-option {
+          border-right: 1px solid #e6e9ec;
+          padding: $spacing-md 10px;
+          width: 33.33333%;
+          text-align: center;
+          cursor: pointer;
+
+          a {
+            @include flexbox(center, center, $spacing-md)
+          }
+            
+        }
+
+        .write-option.write-option__active {
+          border-bottom: 2px solid #007bff;
+        }  
+
+    }
+
+    .write-input {
+      width: 100%;
+      padding: $spacing-md $spacing-lg;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #e6e9ec;
+      font-size: 1.6rem;
+    }
+
+    .write-submit {
+      padding: $spacing-md;
+      @include flexbox(space-between,center);
+
+        &__icons {
+          gap: $spacing-md;
+          font-size: 24px;
+          display: flex;
+
+            button {
+              &:hover {
+                color: $primary;
+              }
+            };
+
+            label {
+              cursor: pointer;
+              &:hover {
+                color: $primary;
+              }
+            }
+
+            #upload-photo, #upload-video {
+              display: none
+            }
+        }
+
+        &-post {
+          @include button;
+          background-color: var(--purple);
+          padding: $spacing-sm $spacing-lg;
+
+          &:hover {
+            background: var(--blue);
+          }
+        }
+    }
+   
+
+}
